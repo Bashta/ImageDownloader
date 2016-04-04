@@ -13,11 +13,13 @@ class FullImageViewController: UIViewController {
 
     @IBOutlet private weak var fullImageView: UIImageView!
 
-    var fullImage: UIImage? {
-        didSet {
-            if let image = fullImage {
-                fullImageView.image = image
-            }
+    var fullImage: UIImage?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if let image = fullImage {
+            fullImageView.image = image
         }
     }
 }
