@@ -72,12 +72,7 @@ extension ImageTableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        dispatch_async(dispatch_get_main_queue(), {
 
-        })
-        progressView?.progress = datasourceCachedImage == nil ? 0 : 100
-        progressPercentageLabel?.text = datasourceCachedImage == nil ? "0%" : "100%"
-        imageNameLabel?.text = cellInfo?.imageName
         downloadButton?.titleLabel?.text = datasourceCachedImage == nil ? "Download" : "Done"
         imageFetcher?.cancel()
     }
